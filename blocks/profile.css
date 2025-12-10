@@ -10,6 +10,7 @@
   height: 190px;
   width: 190px;
   margin-right: 20px;
+  border-radius: 8px;
 }
 
 .profile__column {
@@ -41,33 +42,34 @@
 }
 
 .profile__edit-btn {
-  margin-top: auto;
-  background: transparent;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 24px;
+  font-size: 16px;
+  line-height: 1;
   font-weight: 500;
-  flex-direction: row-reverse;
+  color: #212121;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .profile__add-btn {
   margin-left: auto;
-  width: 149px;
+  padding: 0;
+  width: 157px;
   height: 52px;
-  color: #fff;
   background-color: #212121;
-  display: inline-flex;
-  align-content: center;
-  justify-content: flex-end;
-  font-size: 14px;
+  color: #fcf5e5;
+  border-radius: 8px;
+  align-self: end;
+  font-size: 16px;
+  line-height: 1;
   font-weight: 500;
-  flex-direction: row-reverse;
-  margin-top: 40px;
-  padding: 10px 20px;
-  gap: 8px;
-  border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
 
 .NewPostButton {

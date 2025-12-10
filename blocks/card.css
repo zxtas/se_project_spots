@@ -6,6 +6,19 @@
   height: 413px;
   width: 413px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.card__title {
+  max-width: 353px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
 }
 
 .card__content {
