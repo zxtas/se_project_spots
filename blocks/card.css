@@ -4,7 +4,6 @@
 
 .card__image {
   height: 413px;
-  width: 413px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 12px;
@@ -34,6 +33,10 @@
   border: none;
   background-color: transparent;
   opacity: 40%;
+}
+
+.card__like-button:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 627px) {
