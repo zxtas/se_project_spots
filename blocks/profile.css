@@ -42,6 +42,7 @@
 }
 
 .profile__edit-btn {
+  justify-content: flex-end;
   display: inline-flex;
   flex-direction: row-reverse;
   font-size: 16px;
@@ -82,6 +83,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  gap: 8px;
 }
 
 .profile__add-btn:hover {
@@ -107,6 +109,7 @@
     margin-right: 0;
     height: 80px;
     width: 80px;
+    margin-bottom: 12px;
   }
 
   .profile__name {

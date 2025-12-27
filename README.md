@@ -14,4 +14,4 @@ Here is the Link. https://drive.google.com/file/d/11K1cz8N0j4m-TrC13PbSQsaB79Ypi
 
 This webpage is deployed to GitHub Pages
 
-- Deployment Link:
+- Deployment Link: https://zxtas.github.io/se_project_spots/
