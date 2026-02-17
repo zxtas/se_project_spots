@@ -92,10 +92,8 @@
 }
 
 .modal__submit-btn:hover {
-  .modal__submit-btn:hover {
-    background-color: #404040;
-    cursor: pointer;
-  }
+  background-color: #404040;
+  cursor: pointer;
 }
 
 .modal__input::placeholder {
