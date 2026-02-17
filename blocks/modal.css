@@ -43,7 +43,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: #fff;
-  border: #fff;
 }
 
 .modal__title {
@@ -90,6 +89,13 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
+}
+
+.modal__submit-btn:hover {
+  .modal__submit-btn:hover {
+    background-color: #404040;
+    cursor: pointer;
+  }
 }
 
 .modal__input::placeholder {

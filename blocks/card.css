@@ -34,6 +34,7 @@
   border: none;
   background-color: transparent;
   opacity: 40%;
+  cursor: pointer;
 }
 
 .card__like-button:hover {
