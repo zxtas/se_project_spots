@@ -113,27 +113,17 @@
   .profile__name {
     font-size: 20px;
     margin: 0 0 6px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     max-width: 268px;
   }
 
   .profile__description {
     margin: 0 0 32px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     max-width: 268px;
   }
 
   .profile__column {
-    display: flex;
-    flex-direction: column;
     margin: 0 0 20px;
   }
 
@@ -143,12 +133,7 @@
   }
 
   .profile__add-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 0 auto;
     max-width: 288px;
-    gap: 10px;
-    width: 100%;
   }
 }
