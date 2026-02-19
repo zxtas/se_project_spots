@@ -135,5 +135,6 @@
   .profile__add-btn {
     margin: 0 auto;
     max-width: 288px;
+    width: 100%;
   }
 }

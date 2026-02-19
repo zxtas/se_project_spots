@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
   transition:
     opacity 0.3s ease,
     visibility 0s linear 0.3s;
@@ -30,9 +31,11 @@
   background-color: #fff;
   padding: 32px 50px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .modal__close-btn {
+  border: none;
   position: absolute;
   top: 32px;
   right: 50px;
@@ -98,4 +101,26 @@
 
 .modal__input::placeholder {
   color: #2121214d;
+}
+
+@media (max-width: 627px) {
+  .modal__container {
+    padding: 24px 16px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .modal__close-btn {
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal__submit-btn {
+    max-width: 100%;
+  }
 }
