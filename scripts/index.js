@@ -21,9 +21,12 @@ const initialCards = [
   },
   {
     name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg ",
   },
 ];
+
+const cardTemplate = document.querySelector("#card-template");
+const cardList = document.querySelector(".cards__list");
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -47,6 +50,21 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 
 const newPostImageLinkInput = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardCaptionEl.textContent = data.name;
+  return cardElement;
+}
+
+initialCards.forEach(element => {
+  const cardElement = getCardElement(element);
+  cardList.prepend(cardElement);
+});
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
