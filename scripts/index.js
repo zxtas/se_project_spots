@@ -25,6 +25,9 @@ const initialCards = [
   },
 ];
 
+const cardTemplate = document.querySelector("#card-template");
+const cardList = document.querySelector(".cards__list");
+
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -47,6 +50,34 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 
 const newPostImageLinkInput = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+  const likeButton = cardElement.querySelector(".card__like-button");
+  const deleteButton = cardElement.querySelector(".card__delete-button");
+  const cardEl = cardElement.querySelector(".card");
+
+  cardTitleEl.textContent = data.name;
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+
+  deleteButton.addEventListener("click", () => {
+    cardEl.remove();
+  });
+
+  return cardElement;
+}
+
+initialCards.forEach((card) => {
+  const cardElement = getCardElement(card);
+  cardList.prepend(cardElement);
+});
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -85,13 +116,17 @@ editProfileForm.addEventListener("submit", HandleEventListenerSubmit);
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  console.log(newPostImageLinkInput.value);
-  console.log(newPostCaptionInput.value);
+
+  const newCardData = {
+    name: newPostCaptionInput.value,
+    link: newPostImageLinkInput.value,
+  };
+
+  const newCardElement = getCardElement(newCardData);
+  cardList.prepend(newCardElement);
+
+  newPostForm.reset();
   closeModal(newPostModal);
 }
 
 newPostForm.addEventListener("submit", handleProfileFormSubmit);
-
-initialCards.forEach((card) => {
-  console.log(card.name);
-});
