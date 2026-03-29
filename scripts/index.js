@@ -27,6 +27,15 @@ const initialCards = [
 
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn_type_preview");
+const previewModalImage = previewModal.querySelector(".modal__image");
+
+
+previewModalCloseBtn.addEventListener("click", function () {
+  previewModal.classList.remove("modal_is-opened");
+})
+
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -69,6 +78,11 @@ function getCardElement(data) {
 
   deleteButton.addEventListener("click", () => {
     cardEl.remove();
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    previewModalImage.src = data.link;
+    openModal(previewModal);
   });
 
   return cardElement;
