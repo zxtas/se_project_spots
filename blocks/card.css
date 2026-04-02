@@ -15,7 +15,8 @@
   background-image: url(../images/trashcan.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 12px 15px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
