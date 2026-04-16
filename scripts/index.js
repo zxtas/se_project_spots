@@ -4,7 +4,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
   {
-    name:"Restaurant Terrace",
+    name: "Restaurant Terrace",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
   },
   {
@@ -28,14 +28,15 @@ const initialCards = [
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 const previewModal = document.querySelector("#preview-modal");
-const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn_type_preview");
+const previewModalCloseBtn = previewModal.querySelector(
+  ".modal__close-btn_type_preview",
+);
+
 const previewModalImage = previewModal.querySelector(".modal__image");
 
-
 previewModalCloseBtn.addEventListener("click", function () {
-  previewModal.classList.remove("modal_is-opened");
-})
-
+  closeModal(previewModalCloseBtn);
+});
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -82,6 +83,7 @@ function getCardElement(data) {
 
   cardImageEl.addEventListener("click", () => {
     previewModalImage.src = data.link;
+    previewModalImage.alt = data.name;
     openModal(previewModal);
   });
 
@@ -119,16 +121,16 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-function HandleEventListenerSubmit(evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   closeModal(editProfileModal);
 }
 
-editProfileForm.addEventListener("submit", HandleEventListenerSubmit);
+editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 
-function handleProfileFormSubmit(evt) {
+function handleNewPostFormSubmit(evt) {
   evt.preventDefault();
 
   const newCardData = {
@@ -143,4 +145,4 @@ function handleProfileFormSubmit(evt) {
   closeModal(newPostModal);
 }
 
-newPostForm.addEventListener("submit", handleProfileFormSubmit);
+newPostForm.addEventListener("submit", handleNewPostFormSubmit);
