@@ -31,11 +31,12 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(
   ".modal__close-btn_type_preview",
 );
+const previewModalCaption = previewModal.querySelector(".modal__caption");
 
 const previewModalImage = previewModal.querySelector(".modal__image");
 
 previewModalCloseBtn.addEventListener("click", function () {
-  closeModal(previewModalCloseBtn);
+  closeModal(previewModal);
 });
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
@@ -83,7 +84,7 @@ function getCardElement(data) {
 
   cardImageEl.addEventListener("click", () => {
     previewModalImage.src = data.link;
-    previewModalImage.alt = data.name;
+    previewModalCaption.textContent = data.name;
     openModal(previewModal);
   });
 

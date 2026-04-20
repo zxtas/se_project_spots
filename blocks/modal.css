@@ -90,7 +90,6 @@
 
 .modal__close-btn_type_preview {
   background-image: url("../images/Close-icon-light.svg");
-  background-color: #212121;
   top: 0px;
   right: -40px;
 }
@@ -138,6 +137,7 @@
   background-color: #212121;
   color: #fcf5e5;
   border: none;
+  border-radius: 8px;
   max-width: 156px;
   height: 52px;
   font-weight: 500;
@@ -156,7 +156,7 @@
 
 @media (max-width: 627px) {
   .modal__image {
-    max-width: unset;
+    max-width: 290px;
   }
 
   .modal__caption {
@@ -164,6 +164,7 @@
   }
 
   .modal__close-btn_type_preview {
+    position: absolute;
     top: -40px;
     right: 0px;
   }
@@ -178,8 +179,8 @@
   }
 
   .modal__close-btn {
-    top: 16px;
-    right: 16px;
+    top: -30px;
+    right: 5px;
     width: 32px;
     height: 32px;
   }
